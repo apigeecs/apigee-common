@@ -1,0 +1,9 @@
+<AssignMessage name="stripAuthHeader">
+	<AssignTo type="request" createNew="false"/>
+	<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+	<Remove>
+	    <Headers>
+	        <Header name="Authorization"/>
+	    </Headers>
+	</Remove>
+</AssignMessage>

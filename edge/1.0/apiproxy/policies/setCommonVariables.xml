@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><AssignMessage name="setCommonVariables">
+	<AssignVariable>
+		<Name>origin</Name>
+		<Ref>request.header.origin</Ref>
+		<Value>NA</Value>
+	</AssignVariable>
+	<AssignVariable>
+		<Name>corsRequestedMethod</Name>
+		<Ref>request.header.Access-Control-Request-Method</Ref>
+		<Value>NA</Value>
+	</AssignVariable>
+	<AssignVariable>
+		<Name>requestVerb</Name>
+		<Ref>request.verb</Ref>
+	</AssignVariable>
+</AssignMessage>

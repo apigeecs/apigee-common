@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>apigee</groupId>
+	<artifactId>parent-pom</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0</version>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>central</id>
+			<name>Maven Plugin Repository</name>
+			<url>http://repo1.maven.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+		<plugins>
+
+			<plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<!-- this is important -->
+							<overwrite>true</overwrite>
+							<!-- target -->
+							<outputDirectory>${basedir}/target/apiproxy</outputDirectory>
+							<resources>
+								<resource>
+									<!-- source -->
+									<directory>apiproxy</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+
+            <plugin>
+                <groupId>io.apigee.build-tools.enterprise4g</groupId>
+                <artifactId>apigee-edge-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <id>configure-bundle</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>configure</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>deploy-bundle</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+		</plugins>
+	</build>
+
+
+<!-- This is where you add the environment specific properties under various profile names -->
+	<profiles>
+	    <profile>
+			<id>prod</id>
+			<properties>
+				<apigee.profile>prod</apigee.profile>
+				<!-- replace with your org -->
+				<apigee.org>myorg</apigee.org>
+				<apigee.env>prod</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion> <!-- value of version in  https://api.enterprise.apigee.com/v2 -->
+				<apigee.username>${username}</apigee.username>
+				<apigee.password>${password}</apigee.password>
+				<!-- Below options to support Apigee zero-downtime deployment -->
+				<apigee.options>validate,override</apigee.options>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<apigee.profile>test</apigee.profile>
+				<!-- replace with your org -->
+				<apigee.org>myorg</apigee.org>
+				<apigee.env>test</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion> <!-- value of version in  https://api.enterprise.apigee.com/v2 -->
+				<apigee.username>${username}</apigee.username>
+				<apigee.password>${password}</apigee.password>
+				<!-- Below options to support Apigee zero-downtime deployment -->
+				<apigee.options>validate,override</apigee.options>
+		   </properties>
+	   </profile>
+	</profiles>
+
+</project>
+
+

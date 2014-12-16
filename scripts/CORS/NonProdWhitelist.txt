@@ -1,0 +1,4 @@
+# List of allowed CORS origins for non-production, one per line
+# Comments (#), blank space, and trailing slashes will automatically be removed
+http://www.example.com
+https://www.example.com

@@ -1,0 +1,9 @@
+{
+	"entry" : [
+		{
+		  "name" : "corsAllowedOrigins",
+		  "value" : "REPLACETHIS"
+		}
+	],
+	"name" : "apiConfig"
+}

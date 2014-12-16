@@ -1,0 +1,4 @@
+<Javascript timeLimit="200" enabled="true" continueOnError="false" async="false" name="addCORSPreflightHeaders">
+    <ResourceURL>jsc://addCORSPreflightHeaders.js</ResourceURL>
+</Javascript>
+

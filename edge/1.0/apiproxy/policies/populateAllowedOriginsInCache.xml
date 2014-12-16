@@ -1,0 +1,11 @@
+<PopulateCache enabled="true" continueOnError="false" async="false" name="populateAllowedOriginsInCache">
+	<CacheKey>
+		<KeyFragment>apiConfig-corsAllowedOrigins</KeyFragment>
+	</CacheKey>
+	<CacheResource>kvm_read_cache</CacheResource>
+	<Scope>Global</Scope>
+	<ExpirySettings>
+		<TimeoutInSec>300</TimeoutInSec>
+	</ExpirySettings>
+	<Source>corsAllowedOrigins</Source>
+</PopulateCache>

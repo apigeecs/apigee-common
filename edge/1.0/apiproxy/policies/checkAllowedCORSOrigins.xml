@@ -1,0 +1,5 @@
+<Javascript timeLimit="200" enabled="true" continueOnError="false" async="false" name="checkAllowedCORSOrigins">
+    <ResourceURL>jsc://checkAllowedCORSOrigins.js</ResourceURL>
+    <IncludeURL>jsc://URI.js</IncludeURL>
+</Javascript>
+

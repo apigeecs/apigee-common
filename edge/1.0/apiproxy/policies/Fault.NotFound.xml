@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault name="Fault.NotFound">
+	<IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+	<FaultResponse>
+	<Set>
+   		<StatusCode>404</StatusCode>
+   		<ReasonPhrase>Not Found</ReasonPhrase>
+   		<Payload contentType="application/json" variablePrefix="%" variableSuffix="#">{ "fault": { "faultstring": "Resource not found." } }</Payload>
+    </Set>
+    </FaultResponse>
+</RaiseFault>

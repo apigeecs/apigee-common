@@ -1,0 +1,9 @@
+<AssignMessage async="false" continueOnError="false" enabled="true" name="addCORSAllowOriginHeader">
+    <AssignTo createNew="false" transport="http" type="response"/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	<Set>
+        <Headers>
+			<Header name="Access-Control-Allow-Origin">{origin}</Header>
+        </Headers>
+    </Set>
+</AssignMessage>

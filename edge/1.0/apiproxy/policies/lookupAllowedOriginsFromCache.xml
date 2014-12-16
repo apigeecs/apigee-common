@@ -1,0 +1,8 @@
+<LookupCache enabled="true" continueOnError="true" async="false" name="lookupAllowedOriginsFromCache">
+	<CacheKey>
+		<KeyFragment>apiConfig-corsAllowedOrigins</KeyFragment>
+	</CacheKey>
+	<CacheResource>kvm_read_cache</CacheResource>
+	<Scope>Global</Scope>
+	<AssignTo>corsAllowedOrigins</AssignTo>
+</LookupCache>

@@ -1,0 +1,14 @@
+<AssignMessage async="false" continueOnError="false" enabled="true" name="createCORSPreflightResponse">
+    <AssignTo createNew="true" transport="http" type="response"/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	<Set>
+        <Headers>
+			<Header name="Access-Control-Allow-Origin">{request.header.Origin}</Header>
+			<Header name="Access-Control-Allow-Methods">{request.header.Access-Control-Request-Method}</Header>
+			<Header name="Access-Control-Allow-Credentials">true</Header>
+			<Header name="Access-Control-Max-Age">3600</Header>
+        </Headers>
+        <StatusCode>200</StatusCode>
+        <ReasonPhrase>OK</ReasonPhrase>
+    </Set>
+</AssignMessage>

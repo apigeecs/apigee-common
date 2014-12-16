@@ -1,0 +1,8 @@
+<AssignMessage async="false" continueOnError="false" enabled="true" name="createCORSFailedPreflightResponse">
+    <AssignTo createNew="true" transport="http" type="response"/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	<Set>
+        <StatusCode>404</StatusCode>
+        <ReasonPhrase>Not Found</ReasonPhrase>
+    </Set>
+</AssignMessage>

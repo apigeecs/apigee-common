@@ -1,0 +1,8 @@
+<KeyValueMapOperations name="fetchAllowedOriginsFromMap" mapIdentifier="apiConfig">
+    <Get assignTo="corsAllowedOrigins">
+        <Key>
+            <Parameter>corsAllowedOrigins</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>
